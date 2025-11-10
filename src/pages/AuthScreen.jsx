@@ -176,14 +176,14 @@ const AuthScreen = () => {
         const companyId = formData.companyId;
 
         // First, validate if employee exists in employees_collection
-        // const employeeExists = await validateEmployeeExists(companyId);
-        // setValidatingEmployee(false);
+        const employeeExists = await validateEmployeeExists(companyId);
+        setValidatingEmployee(false);
 
-        // if (!employeeExists) {
-        //   setErrors({ companyId: 'Employee ID not found. Please contact your administrator.' });
-        //   setLoading(false);
-        //   return;
-        // }
+        if (!employeeExists) {
+          setErrors({ companyId: 'Employee ID not found. Please contact your administrator.' });
+          setLoading(false);
+          return;
+        }
 
         // Proceed with signup if employee exists
         const result = await signup({ email, password, displayName, companyId });
@@ -432,11 +432,11 @@ const AuthScreen = () => {
               <span className="toggle-text">
                 {isLogin ? "Don't have an account? " : "Already have an account? "}
               </span>
-              <button type="button" onClick={toggleAuthMode} className="toggle-link-btn">
+              {/* <button type="button" onClick={toggleAuthMode} className="toggle-link-btn">
                 <span className="toggle-link">
                   {isLogin ? 'Sign Up' : 'Sign In'}
                 </span>
-              </button>
+              </button> */}
             </div>
           )}
 
