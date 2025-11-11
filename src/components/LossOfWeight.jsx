@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from "react";
 
-function LossOfWeight({ tag }) {
-  const { code, name } = tag;
-  const [binWeightBefore, setBinWeightBefore] = useState(0);
-  const [binWeightAfter, setBinWeightAfter] = useState(0);
-  const [totalizerBefore, setTotalizerBefore] = useState(0);
-  const [totalizerAfter, setTotalizerAfter] = useState(0);
+function LossOfWeight({ tag, index, onDataChange }) {
+  const { code, name, binBefore, binAfter, totBefore, totAfter } = tag;
   const [binDifference, setBinDifference] = useState(0);
   const [totDifference, setTotDifference] = useState(0);
   const [error, setError] = useState(0);
 
   useEffect(() => {
-    const binbefore = parseFloat(binWeightBefore) || 0 ;
-    const binafter = parseFloat(binWeightAfter) || 0 ;
-    const bindiff = binbefore -  binafter
-    const totbefore  = parseFloat(totalizerBefore) || 0 ;
-    const totafter = parseFloat(totalizerAfter) || 0 ;
-    const totdiff = totbefore - totafter ;
-    setBinDifference(binbefore-binafter);
-    setTotDifference(totdiff);
-    if(binbefore>0&&binafter>0&&totbefore>0&&totafter>0){
-       let  wfError = ((bindiff/totdiff)-1) *100 ;
-       setError(Number(wfError.toFixed(2)))
+    const binBeforeVal = parseFloat(binBefore) || 0;
+    const binAfterVal = parseFloat(binAfter) || 0;
+    const binDiff = binBeforeVal - binAfterVal;
+    const totBeforeVal = parseFloat(totBefore) || 0;
+    const totAfterVal = parseFloat(totAfter) || 0;
+    const totDiff = totBeforeVal - totAfterVal;
+    
+    setBinDifference(binDiff);
+    setTotDifference(totDiff);
+    
+    if (binBeforeVal > 0 && binAfterVal > 0 && totBeforeVal > 0 && totAfterVal > 0) {
+      let wfError = ((binDiff / totDiff) - 1) * 100;
+      setError(Number(wfError.toFixed(2)));
     }
-  }, [binWeightBefore,binWeightAfter,totalizerAfter,totalizerBefore]);
-  const handleNumberInput = (value, setter) => {
+  }, [binBefore, binAfter, totBefore, totAfter]);
+
+  const handleNumberInput = (value, field) => {
     // Allow empty string, numbers, decimal point, and negative sign
     if (value === '' || value === '-' || /^-?\d*\.?\d*$/.test(value)) {
-      setter(value);
+      onDataChange(index, field, value);
     }
   };
 
@@ -39,30 +38,30 @@ function LossOfWeight({ tag }) {
         type="text"
         inputMode="decimal"
         placeholder="Bin Weight Before"
-        value={binWeightBefore}
-        onChange={(e) => handleNumberInput(e.target.value, setBinWeightBefore)}
+        value={binBefore}
+        onChange={(e) => handleNumberInput(e.target.value, 'binBefore')}
       />
       <input
         type="text"
         inputMode="decimal"
         placeholder="Bin Weight After"
-        value={binWeightAfter}
-        onChange={(e) => handleNumberInput(e.target.value, setBinWeightAfter)}
+        value={binAfter}
+        onChange={(e) => handleNumberInput(e.target.value, 'binAfter')}
       />
       <span>{binDifference}</span>
       <input
         type="text"
         inputMode="decimal"
         placeholder="Totalizer Before"
-        value={totalizerBefore}
-        onChange={(e) => handleNumberInput(e.target.value, setTotalizerBefore)}
+        value={totBefore}
+        onChange={(e) => handleNumberInput(e.target.value, 'totBefore')}
       />
       <input
         type="text"
         inputMode="decimal"
         placeholder="Totalizer After"
-        value={totalizerAfter}
-        onChange={(e) => handleNumberInput(e.target.value, setTotalizerAfter)}
+        value={totAfter}
+        onChange={(e) => handleNumberInput(e.target.value, 'totAfter')}
       />
       <span>{totDifference}</span>
       <span>{error}</span>
