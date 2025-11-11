@@ -43,7 +43,7 @@ const HomeScreen = () => {
           <button className="header-btn" onClick={() => navigate('/packers-history')}>
             Packer
           </button>
-          <button className="header-btn" onClick={() => navigate('/weigh-feeder')}>
+          <button className="header-btn" onClick={() => navigate('/weighfeeder')}>
             Weigh Feeder
           </button>
           <button className="logout-btn" onClick={handleLogout}>

@@ -9,6 +9,7 @@ import AuthScreen from './pages/AuthScreen';
 import HomeScreen from './pages/HomeScreen';
 import PackerCalibrationSheet from './pages/PackerCalibrationSheet';
 import PackersHistory from './pages/PackersHistory';
+import WeighFeeder from './pages/WeighFeeder';
   import './App.css';
     
 import AccessDenied from './components/AccessDenied'
@@ -229,6 +230,14 @@ function App() {
           element={
             <ProtectedRoute>
               <PackersHistory />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/weighfeeder" 
+          element={
+            <ProtectedRoute>
+              <WeighFeeder/>
             </ProtectedRoute>
           } 
         />
