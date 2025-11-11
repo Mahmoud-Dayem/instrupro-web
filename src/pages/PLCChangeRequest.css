@@ -1,0 +1,591 @@
+.plc-page {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 24px;
+	min-height: 100vh;
+	background-color: #f6f8f7;
+}
+
+.plc-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+}
+
+.plc-header-left {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+}
+
+.plc-header-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 8px;
+	min-width: 200px;
+}
+
+.plc-header-actions {
+	display: inline-flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.plc-last-sync {
+	font-size: 12px;
+	color: #4a4a58;
+	font-weight: 500;
+}
+
+.plc-home-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	border: none;
+	padding: 10px 16px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.9);
+	color: #248a3d;
+	font-size: 13px;
+	font-weight: 700;
+	box-shadow: 0 4px 12px rgba(36, 138, 61, 0.18);
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plc-home-btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(36, 138, 61, 0.24);
+}
+
+.plc-home-btn svg {
+	flex-shrink: 0;
+}
+
+.plc-status-filters {
+	display: inline-flex;
+	gap: 8px;
+	background: #ffffff;
+	padding: 6px;
+	border-radius: 999px;
+	box-shadow: 0 4px 12px rgba(36, 138, 61, 0.08);
+}
+
+.plc-filter-btn {
+	border: none;
+	background: transparent;
+	color: #3d3d4a;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 8px 16px;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.plc-filter-btn.is-active {
+	background: linear-gradient(135deg, #248a3d, #1a6b2e);
+	color: #ffffff;
+	box-shadow: 0 4px 10px rgba(36, 138, 61, 0.35);
+}
+
+.plc-sort-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	border: none;
+	background: #ffffff;
+	color: #248a3d;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 10px 18px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(36, 138, 61, 0.12);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plc-sort-btn:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(36, 138, 61, 0.18);
+}
+
+.plc-refresh-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	border: none;
+	background: rgba(36, 138, 61, 0.12);
+	color: #248a3d;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 10px 18px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(36, 138, 61, 0.14);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+	.plc-refresh-btn svg {
+		flex-shrink: 0;
+	}
+
+.plc-refresh-btn:hover {
+	transform: translateY(-1px);
+	background: rgba(36, 138, 61, 0.18);
+	box-shadow: 0 6px 16px rgba(36, 138, 61, 0.2);
+}
+
+.plc-refresh-btn[disabled] {
+	opacity: 0.6;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+.plc-search {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.plc-search-box {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	max-width: 420px;
+	background: #ffffff;
+	border-radius: 999px;
+	padding: 10px 16px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	border: 1px solid rgba(36, 138, 61, 0.1);
+}
+
+.plc-search-box input {
+	flex: 1;
+	border: none;
+	background: transparent;
+	font-size: 14px;
+	color: #1c1c1e;
+	outline: none;
+}
+
+.plc-search-icon {
+	color: #248a3d;
+}
+
+.plc-search-clear {
+	border: none;
+	background: transparent;
+	color: #888;
+	cursor: pointer;
+	padding: 0;
+	display: inline-flex;
+	transition: color 0.2s ease;
+}
+
+.plc-search-clear:hover {
+	color: #333;
+}
+
+.plc-loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	padding: 60px 20px;
+	background: #ffffff;
+	border-radius: 16px;
+	box-shadow: inset 0 0 0 1px rgba(36, 138, 61, 0.08);
+	color: #248a3d;
+	font-weight: 600;
+}
+
+.plc-spinner {
+	animation: plc-spin 1s linear infinite;
+}
+
+@keyframes plc-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.plc-empty {
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 48px 24px;
+	text-align: center;
+	color: #4a4a58;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.plc-empty h3 {
+	margin-bottom: 8px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #248a3d;
+}
+
+.plc-list {
+	display: grid;
+	gap: 18px;
+}
+
+.plc-card {
+	background: #ffffff;
+	border-radius: 18px;
+	padding: 20px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+	border: 1px solid rgba(36, 138, 61, 0.1);
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plc-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 28px rgba(36, 138, 61, 0.16);
+}
+
+.plc-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.plc-card-title {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.plc-card-title h3 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 700;
+	color: #1c1c1e;
+}
+
+.plc-status {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	background: rgba(36, 138, 61, 0.1);
+	color: #248a3d;
+	font-weight: 600;
+}
+
+.plc-status.cancelled {
+	background: rgba(255, 59, 48, 0.12);
+	color: #ff3b30;
+}
+
+.plc-relative-time {
+	font-size: 12px;
+	color: #6c6c7a;
+	background: rgba(0, 0, 0, 0.04);
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-weight: 600;
+}
+
+.plc-card-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 16px;
+	font-size: 13px;
+	color: #4a4a58;
+}
+
+.plc-card-meta span {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.plc-card-meta svg {
+	color: #248a3d;
+}
+
+.plc-card-details {
+	font-size: 14px;
+	line-height: 1.5;
+	color: #2c2c36;
+	background: rgba(36, 138, 61, 0.05);
+	padding: 12px 14px;
+	border-radius: 12px;
+}
+
+.plc-card-cancelled {
+	font-size: 12px;
+	color: #248a3d;
+	font-weight: 600;
+}
+
+.plc-card-actions {
+	display: flex;
+	gap: 12px;
+}
+
+.plc-card-actions button {
+	border: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	background: rgba(36, 138, 61, 0.12);
+	color: #248a3d;
+	padding: 8px 14px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 600;
+	transition: background 0.2s ease;
+}
+
+.plc-card-actions button svg {
+	flex-shrink: 0;
+}
+
+.plc-card-actions button:hover {
+	background: rgba(36, 138, 61, 0.2);
+}
+
+.plc-card-actions .plc-cancel-btn {
+	background: rgba(255, 59, 48, 0.12);
+	color: #ff3b30;
+}
+
+.plc-card-actions .plc-cancel-btn:hover {
+	background: rgba(255, 59, 48, 0.22);
+}
+
+.plc-add-button {
+	position: fixed;
+	bottom: 28px;
+	right: 32px;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: linear-gradient(135deg, #248a3d, #1a6b2e);
+	color: #ffffff;
+	border: none;
+	padding: 14px 20px;
+	border-radius: 999px;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+	box-shadow: 0 12px 24px rgba(36, 138, 61, 0.35);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	z-index: 50;
+}
+
+.plc-add-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 16px 30px rgba(36, 138, 61, 0.4);
+}
+
+.plc-modal {
+	position: fixed;
+	inset: 0;
+	background: rgba(17, 24, 39, 0.45);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	z-index: 100;
+}
+
+.plc-modal-content {
+	background: #ffffff;
+	border-radius: 20px;
+	width: 100%;
+	max-width: 640px;
+	padding: 28px;
+	box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.plc-modal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.plc-modal-header h2 {
+	font-size: 20px;
+	margin: 0;
+	color: #1c1c1e;
+}
+
+.plc-modal-close {
+	border: none;
+	background: rgba(0, 0, 0, 0.05);
+	color: #1c1c1e;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.plc-form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.plc-form-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 16px;
+}
+
+.plc-form-grid label,
+.plc-form-full {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-size: 13px;
+	color: #4a4a58;
+	font-weight: 600;
+}
+
+.plc-form-grid input,
+.plc-form-full textarea,
+.plc-search-box input {
+	border-radius: 12px;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	padding: 10px 14px;
+	font-size: 14px;
+	font-family: inherit;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plc-form-grid input:focus,
+.plc-form-full textarea:focus {
+	outline: none;
+	border-color: #248a3d;
+	box-shadow: 0 0 0 3px rgba(36, 138, 61, 0.12);
+}
+
+.plc-form-full textarea {
+	resize: vertical;
+	min-height: 120px;
+}
+
+.plc-form-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+}
+
+.plc-save-btn,
+.plc-close-btn {
+	border: none;
+	border-radius: 999px;
+	padding: 12px 22px;
+	font-size: 14px;
+	font-weight: 700;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+}
+
+.plc-save-btn {
+	background: linear-gradient(135deg, #248a3d, #1a6b2e);
+	color: #ffffff;
+	box-shadow: 0 10px 20px rgba(36, 138, 61, 0.3);
+}
+
+.plc-save-btn[disabled] {
+	opacity: 0.6;
+	cursor: not-allowed;
+	box-shadow: none;
+}
+
+.plc-close-btn {
+	background: rgba(0, 0, 0, 0.06);
+	color: #1c1c1e;
+}
+
+@media (max-width: 768px) {
+	.plc-page {
+		padding: 16px;
+	}
+
+	.plc-header-left {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.plc-home-btn {
+		flex: 1 1 auto;
+		justify-content: center;
+	}
+
+		.plc-header-right {
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.plc-last-sync {
+			text-align: center;
+		}
+
+		.plc-header-actions {
+			width: 100%;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.plc-refresh-btn,
+		.plc-sort-btn {
+			flex: 1 1 150px;
+			justify-content: center;
+		}
+
+	.plc-add-button {
+		right: 16px;
+		bottom: 20px;
+	}
+
+	.plc-modal {
+		padding: 12px;
+	}
+
+	.plc-modal-content {
+		padding: 20px;
+	}
+
+	.plc-form-actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.plc-save-btn,
+	.plc-close-btn {
+		justify-content: center;
+	}
+}

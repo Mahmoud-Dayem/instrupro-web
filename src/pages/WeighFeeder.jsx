@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './WeighFeeder.css'
 import LossOfWeight from '../components/LossOfWeight'
 
+const GOOGLE_SHEET_LINK = 'https://docs.google.com/spreadsheets/d/1l7IHcsGReX-O-VBHWQhom2VMIlhx3lRbcTBOweErOuU/edit?pli=1&gid=0#gid=0'
+
 function WeighFeeder() {
   const [data, setData] = useState([
     { code: '331WF1', name: 'Limestone', binBefore: '', binAfter: '', totBefore: '', totAfter: '' },
@@ -52,7 +54,7 @@ function WeighFeeder() {
         date: new Date().toISOString(),
         errors: errorValues
       }
-      const DEPLOY_ID = 'AKfycbyIPi6sW_CNqnKb985AQTNOaNWZgyyyiNlNOSQkF-lC6PM5JJ_6eNdO5n7kAk3um5hV';
+      
       // Replace this URL with your Google Apps Script Web App URL
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyIPi6sW_CNqnKb985AQTNOaNWZgyyyiNlNOSQkF-lC6PM5JJ_6eNdO5n7kAk3um5hV/exec'
       
@@ -89,13 +91,23 @@ function WeighFeeder() {
     <div className="weigh-feeder-container">
       <div className="header-section">
         <h1 className="weigh-feeder-title">Weigh Feeder - Loss of Weight</h1>
-        <button 
-          className="save-button" 
-          onClick={saveToGoogleSheets}
-          disabled={isSaving}
-        >
-          {isSaving ? 'Saving...' : 'Save to Google Sheets'}
-        </button>
+        <div className="button-group">
+          <button 
+            className="save-button" 
+            onClick={saveToGoogleSheets}
+            disabled={isSaving}
+          >
+            {isSaving ? 'Saving...' : 'Save to Google Sheets'}
+          </button>
+          <a 
+            href={GOOGLE_SHEET_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="view-sheet-button"
+          >
+            View Google Sheet
+          </a>
+        </div>
       </div>
       <div className="table-container">
         <div className="header">

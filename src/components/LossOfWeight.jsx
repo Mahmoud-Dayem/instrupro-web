@@ -37,14 +37,14 @@ function LossOfWeight({ tag, index, onDataChange }) {
       <input
         type="text"
         inputMode="decimal"
-        placeholder="Bin Weight Before"
+        placeholder=" "
         value={binBefore}
         onChange={(e) => handleNumberInput(e.target.value, 'binBefore')}
       />
       <input
         type="text"
         inputMode="decimal"
-        placeholder="Bin Weight After"
+        placeholder=" "
         value={binAfter}
         onChange={(e) => handleNumberInput(e.target.value, 'binAfter')}
       />
@@ -52,14 +52,14 @@ function LossOfWeight({ tag, index, onDataChange }) {
       <input
         type="text"
         inputMode="decimal"
-        placeholder="Totalizer Before"
+        placeholder=" "
         value={totBefore}
         onChange={(e) => handleNumberInput(e.target.value, 'totBefore')}
       />
       <input
         type="text"
         inputMode="decimal"
-        placeholder="Totalizer After"
+        placeholder=" "
         value={totAfter}
         onChange={(e) => handleNumberInput(e.target.value, 'totAfter')}
       />

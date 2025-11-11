@@ -10,9 +10,10 @@ import HomeScreen from './pages/HomeScreen';
 import PackerCalibrationSheet from './pages/PackerCalibrationSheet';
 import PackersHistory from './pages/PackersHistory';
 import WeighFeeder from './pages/WeighFeeder';
-  import './App.css';
+   import './App.css';
     
 import AccessDenied from './components/AccessDenied'
+import PLCChangeRequest from './pages/PLCChangeRequest';
  
 // Protected Route component
 const ProtectedRoute = ({ children }) => {
@@ -238,6 +239,14 @@ function App() {
           element={
             <ProtectedRoute>
               <WeighFeeder/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/plcchangerequest" 
+          element={
+            <ProtectedRoute>
+              <PLCChangeRequest/>
             </ProtectedRoute>
           } 
         />

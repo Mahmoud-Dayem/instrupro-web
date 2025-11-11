@@ -2,7 +2,7 @@
   padding: 20px;
   background-color: #F9F9F9;
   min-height: 100vh;
-  min-width: 100vw;
+  /* min-width: 100vw; */
 }
 
 .header-section {
@@ -19,7 +19,14 @@
   margin: 0;
 }
 
-.save-button {
+.button-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.save-button,
+.view-sheet-button {
   padding: 12px 24px;
   background: linear-gradient(135deg, #248A3D 0%, #1a6b2e 100%);
   color: white;
@@ -46,6 +53,23 @@
 .save-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.view-sheet-button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0066CC 0%, #004C99 100%);
+}
+
+.view-sheet-button:hover {
+  background: linear-gradient(135deg, #004C99 0%, #0066CC 100%);
+}
+
+.view-sheet-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
 }
 
 .table-container {
