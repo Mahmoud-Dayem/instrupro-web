@@ -9,10 +9,10 @@ function LossOfWeight({ tag, index, onDataChange }) {
   useEffect(() => {
     const binBeforeVal = parseFloat(binBefore) || 0;
     const binAfterVal = parseFloat(binAfter) || 0;
-    const binDiff = binBeforeVal - binAfterVal;
+    const binDiff = (binBeforeVal - binAfterVal).toFixed(2);
     const totBeforeVal = parseFloat(totBefore) || 0;
     const totAfterVal = parseFloat(totAfter) || 0;
-    const totDiff = totBeforeVal - totAfterVal;
+    const totDiff = ( totAfterVal - totBeforeVal).toFixed(2);
     
     setBinDifference(binDiff);
     setTotDifference(totDiff);

@@ -1,0 +1,578 @@
+/* PLC Modification Form Styles */
+
+.plc-form-page {
+  min-height: 100vh;
+  background-color: #f6f8f7;
+  padding: 20px;
+}
+
+.plc-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 16px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plc-form-header h2 {
+  margin: 0;
+  color: #248a3d;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.plc-form-home-btn,
+.plc-form-print-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.plc-form-home-btn {
+  background-color: #248a3d;
+  color: white;
+}
+
+.plc-form-home-btn:hover {
+  background-color: #1d6e30;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(36, 138, 61, 0.3);
+}
+
+.plc-form-print-btn {
+  background-color: #0066cc;
+  color: white;
+}
+
+.plc-form-print-btn:hover {
+  background-color: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.plc-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.plc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.plc-form-title {
+  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.plc-form-title h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.plc-form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.plc-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.plc-form-field-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.plc-form-field-full {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.plc-form-field-full-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+.plc-form-field-full-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.plc-form-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.plc-form-input,
+.plc-form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  /* width: 50%; */
+}
+.plc-form-input-row,
+.plc-form-textarea-row {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  /* width: 50%; */
+}
+
+.plc-form-input:focus,
+.plc-form-textarea:focus {
+  outline: none;
+  border-color: #248a3d;
+  box-shadow: 0 0 0 3px rgba(36, 138, 61, 0.1);
+}
+
+.plc-form-textarea {
+  resize: vertical;
+  font-family: inherit;
+  width: 100%;
+}
+
+.plc-form-section {
+}
+
+.plc-form-section-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plc-form-request-type {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.plc-form-radio-group {
+  display: flex;
+  gap: 24px;
+}
+
+.plc-form-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.plc-form-radio input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #248a3d;
+}
+
+.plc-form-radio span {
+  font-size: 14px;
+  color: #333;
+}
+
+.plc-form-duration-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+.plc-form-duration-header-cell {
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    background-color: #f5f5f5;
+    border: 1px solid #000;
+    color: #333;
+}
+
+.plc-form-duration-data-cell {
+    padding: 20px 12px;
+    text-align: center;
+    border: 1px solid #000;
+    background: white;
+    min-height: 40px;
+    color: #333;
+}
+
+.plc-form-signature-section {
+  padding: 16px 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.plc-form-signature-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.plc-form-input-short {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.plc-form-input-short:focus {
+  outline: none;
+  border-color: #248a3d;
+  box-shadow: 0 0 0 3px rgba(36, 138, 61, 0.1);
+}
+
+.plc-form-approvals {
+  padding: 24px 0;
+  border-top: 2px solid #248a3d;
+}
+
+.plc-form-approval-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.plc-form-input-medium {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.plc-form-input-medium:focus {
+  outline: none;
+  border-color: #248a3d;
+  box-shadow: 0 0 0 3px rgba(36, 138, 61, 0.1);
+}
+
+.plc-form-footer {
+  padding: 16px 0;
+  border-top: 1px solid #e5e5e5;
+  text-align: left;
+  font-size: 11px;
+  color: #666;
+}
+
+.plc-form-footer p {
+  margin: 4px 0;
+}
+
+.plc-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.plc-form-btn-cancel,
+.plc-form-btn-submit {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.plc-form-btn-cancel {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.plc-form-btn-cancel:hover {
+  background-color: #e5e5e5;
+}
+
+.plc-form-btn-submit {
+  background-color: #248a3d;
+  color: white;
+}
+
+.plc-form-btn-submit:hover {
+  background-color: #1d6e30;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(36, 138, 61, 0.3);
+}
+
+/* Print Styles */
+@page {
+  size: A4 portrait;
+  margin: 0.5cm;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    margin: 1% 10%;
+  }
+
+  .plc-form-page {
+    padding: 0;
+    background: white;
+    min-height: auto;
+  }
+
+  .plc-form-container {
+    box-shadow: none;
+    /* padding: 15px; */
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .plc-form {
+    gap: 2px;
+  }
+
+  body,
+  .plc-form,
+  .plc-form-container {
+    line-height: normal;
+  }
+
+  .plc-form-title {
+    margin: 0;
+  }
+
+  .plc-form-title h1 {
+    font-size: 12px;
+    margin: 15px 0;
+    font-weight: bold;
+  }
+
+  .plc-form-row {
+    gap: 1px;
+  }
+
+  .plc-form-section {
+  }
+
+  .plc-form-section-title {
+    font-size: 11px;
+    /* margin-bottom: 0px; */
+  }
+
+  .plc-form-label {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .plc-form-request-type {
+    padding: 2px 0;
+    border-top: none;
+  }
+
+  .plc-form-signature-section {
+    padding: 2px 0;
+    border-top: none;
+  }
+
+  .plc-form-signature-row {
+    gap: 6px;
+  }
+
+  .plc-form-approvals {
+    border-top: 1px solid #ddd;
+    padding: 10px 0 0 0;
+  }
+
+  /* .plc-form-approval-row {
+        gap: 6px;
+        margin-bottom: 6px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    } */
+  .plc-form-approval-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  /* Avoid breaking rows/signatures/sections across pages */
+  .plc-form-row,
+  .plc-form-section,
+  .plc-form-approval-row,
+  .plc-form-signature-row,
+  .plc-form-field-full,
+  .plc-form-field-full-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* .plc-form-input,
+  .plc-form-textarea,
+  .plc-form-input-short,
+  .plc-form-input-medium {
+    border: none;
+    padding: 6px 4px;
+    font-size: 11;
+  } */
+  .plc-form-input-row,
+  .plc-form-input,
+  .plc-form-textarea,
+  .plc-form-textarea-row,
+  .plc-form-input-short,
+  .plc-form-input-medium {
+    border: none;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    margin: 5px;
+    font-weight: 0;
+  }
+
+  .plc-form-textarea {
+    min-height: 20px;
+    /* line-height: 1.2; */
+  }
+
+  .plc-form-footer {
+    border-top: none;
+    padding: 6px 0;
+    font-size: 8px;
+  }
+
+  .plc-form-footer p {
+    margin: 1px 0;
+  }
+
+  .plc-form-field-full,
+  .plc-form-field-full-row {
+    margin-bottom: 0px;
+  }
+
+  .calibration-header {
+    padding: 8px 0;
+    margin-bottom: 15px;
+  }
+
+  .calibration-header .logo {
+    width: 100px;
+    height: auto;
+  }
+
+  /* Duration table borders in print */
+  .plc-form-duration-table {
+    border: 0.25pt solid #000 !important;
+  }
+
+  .plc-form-duration-header-cell,
+  .plc-form-duration-data-cell {
+    border: 0.25pt solid #000 !important;
+    padding: 6px 4px;
+    font-size: 12px;
+  }
+
+  .plc-form-duration-data-cell {
+    padding: 15px 4px;
+    min-height: 30px;
+  }
+
+  /* Prevent page breaks inside key blocks */
+  table {
+    page-break-inside: avoid;
+  }
+  section {
+    page-break-inside: avoid;
+  }
+
+  /* Hide interactive controls in print */
+  .plc-form-actions {
+    display: none !important;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .plc-form-page {
+    padding: 12px;
+  }
+
+  .plc-form-container {
+    padding: 24px 16px;
+  }
+
+  .plc-form-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .plc-form-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .plc-form-signature-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .plc-form-radio-group {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .plc-form-actions {
+    flex-direction: column;
+  }
+
+  .plc-form-btn-cancel,
+  .plc-form-btn-submit {
+    width: 100%;
+  }
+
+  .plc-form-title h1 {
+    font-size: 18px;
+  }
+}

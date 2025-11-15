@@ -10,7 +10,9 @@ import HomeScreen from './pages/HomeScreen';
 import PackerCalibrationSheet from './pages/PackerCalibrationSheet';
 import PackersHistory from './pages/PackersHistory';
 import WeighFeeder from './pages/WeighFeeder';
-   import './App.css';
+import PlcModificationForm from './pages/PlcModificationForm';
+import WeighFeederForm from './pages/WeighFeederForm';
+ import './App.css';
     
 import AccessDenied from './components/AccessDenied'
 import PLCChangeRequest from './pages/PLCChangeRequest';
@@ -27,58 +29,6 @@ const ProtectedRoute = ({ children }) => {
 };
 
  
-// Permission-based Protected Route for Inbox features
-// const InboxProtectedRoute = ({ children }) => {
-//   const user = useSelector(state => state.auth.user);
-//   const dispatch = useDispatch();
-//   const [loading, setLoading] = useState(true);
-//   const [hasPermission, setHasPermission] = useState(false);
-  
-//   useEffect(() => {
-//     const checkInboxPermission = async () => {
-//       if (!user) {
-//         setLoading(false);
-//         return;
-//       }
-
-//       // If inbox permission is already loaded and true, allow access
-//       if (user.inbox === true) {
-//         setHasPermission(true);
-//         setLoading(false);
-//         return;
-//       }
-
-     
-     
-//       setLoading(false);
-//     };
-
-//     checkInboxPermission();
-//   }, [user, dispatch]);
-  
-//   if (!user) {
-//     return <Navigate to="/auth" replace />;
-//   }
-  
-//   if (loading) {
-//     return (
-//       <div style={{ 
-//         display: 'flex', 
-//         justifyContent: 'center', 
-//         alignItems: 'center', 
-//         minHeight: '100vh' 
-//       }}>
-//         <div>Checking permissions...</div>
-//       </div>
-//     );
-//   }
-  
-//   if (!hasPermission) {
-//     return <AccessDenied feature="Inbox features" />;
-//   }
-  
-//   return children;
-// };
 
 function App() {
   const dispatch = useDispatch();
@@ -248,6 +198,22 @@ function App() {
             <ProtectedRoute>
               <PLCChangeRequest/>
             </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/plcmodificationform" 
+          element={
+      
+              <PlcModificationForm/>
+          
+          } 
+        />
+        <Route 
+          path="/weighfeederform" 
+          element={
+      
+              <WeighFeederForm/>
+          
           } 
         />
       

@@ -3,15 +3,43 @@ import { removeUser } from "../helper/authStorage";
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../store/authSlice';
 import './HomeScreen.css';
-import { Cpu, Scale, UserCircle, BrainCircuit,Box,box } from "lucide-react";
+import { Cpu, Scale, UserCircle, BrainCircuit, Box, FileText, ChevronDown } from "lucide-react";
+import { useState, useRef, useEffect } from 'react';
 
 
 const HomeScreen = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
-
+  const forms = [
+    { label: 'PLC Modification Request', route: '/plcmodificationform' },
+    { label: 'Weigh Feeder Calibration', route: '/weighfeederform' }
+  ];
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const name = user?.displayName || 'User';
+
+  const handleFormSelect = (route) => {
+    setDropdownOpen(false);
+    navigate(route);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownOpen]);
 
   const handleLogout = () => {
     const confirmed = window.confirm(
@@ -46,12 +74,33 @@ const HomeScreen = () => {
 
         {/* Right side - Buttons */}
         <div className="header-buttons">
-          {/* <button className="header-btn" onClick={() => navigate('/packers-history')}>
-            Packer
-          </button> */}
-          {/* <button className="header-btn" onClick={() => navigate('/weighfeeder')}>
-            Weigh Feeder
-          </button> */}
+          <div className="forms-dropdown" ref={dropdownRef}>
+            <button 
+              className="forms-btn" 
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            >
+              <FileText size={18} />
+              <span>Forms</span>
+              <ChevronDown size={16} className={`chevron ${dropdownOpen ? 'open' : ''}`} />
+            </button>
+
+            {dropdownOpen && (
+              <div className="forms-dropdown-menu">
+                {forms.map((form, index) => (
+                  <button
+                    key={index}
+                    className="forms-dropdown-item"
+                    onClick={() => handleFormSelect(form.route)}
+                  >
+                    <FileText size={18} />
+                    <span>{form.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+
           <button className="logout-btn" onClick={handleLogout}>
             Logout
           </button>
@@ -84,7 +133,7 @@ const HomeScreen = () => {
 
           {/* Sensor/Circuit Icon */}
           <div className="icon-item" onClick={() => navigate('/packers-history')} style={{ cursor: 'pointer' }}>
-                 <Box size={64} color="#248A3D" />
+            <Box size={64} color="#248A3D" />
 
             <p className="icon-label">Packing</p>
           </div>

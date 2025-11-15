@@ -38,8 +38,8 @@ function WeighFeeder() {
         const totBefore = parseFloat(row.totBefore) || 0
         const totAfter = parseFloat(row.totAfter) || 0
         
-        const binDiff = binBefore - binAfter
-        const totDiff = totBefore - totAfter
+        const binDiff = (binBefore - binAfter).toFixed(2);
+        const totDiff =  ( totAfter - totBefore).toFixed(2);
         
         let error = 0
         if (binBefore > 0 && binAfter > 0 && totBefore > 0 && totAfter > 0 && totDiff !== 0) {
