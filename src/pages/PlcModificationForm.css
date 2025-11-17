@@ -113,18 +113,13 @@
   gap: 6px;
   margin-bottom: 12px;
 }
+
 .plc-form-field-full-row {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 6px;
-}
-.plc-form-field-full-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 1px;
 }
 
 .plc-form-label {
@@ -135,7 +130,7 @@
 
 .plc-form-input,
 .plc-form-textarea {
-  padding: 10px 12px;
+  padding: 4px 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 16px;
@@ -144,7 +139,7 @@
 }
 .plc-form-input-row,
 .plc-form-textarea-row {
-  padding: 10px 12px;
+  padding: 4px 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 16px;
@@ -166,6 +161,7 @@
 }
 
 .plc-form-section {
+  margin: 1px;
 }
 
 .plc-form-section-title {
@@ -445,7 +441,7 @@
   .plc-form-approval-row,
   .plc-form-signature-row,
   .plc-form-field-full,
-  .plc-form-field-full-row {
+   .plc-form-field-full-row {
     break-inside: avoid;
     page-break-inside: avoid;
   }
@@ -575,4 +571,30 @@
   .plc-form-title h1 {
     font-size: 18px;
   }
+}
+.plc-form-reason-section{
+display: grid;
+grid-template-columns: 30% 70%  ;
+gap: 0%;
+ 
+
+}
+.plc-form-input-reason{
+  padding: 2px 2px;
+  border: 1px solid #da0000;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+.plc-form-reason-section h3{
+  color: red;
+  margin: 4px;
+  font-size: 14px;
+ 
+}
+.plc-form-reason-section input{
+  color: rgb(33, 20, 228);
+  margin: 4px;
+  font-size: 14px;
+ 
 }
