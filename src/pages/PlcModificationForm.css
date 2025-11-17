@@ -580,21 +580,18 @@ gap: 0%;
 
 }
 .plc-form-input-reason{
-  padding: 2px 2px;
-  border: 1px solid #da0000;
-  border-radius: 6px;
+  padding: 4px 2px;
+   border-radius: 6px;
   font-size: 16px;
   transition: border-color 0.3s ease;
 }
 .plc-form-reason-section h3{
-  color: red;
-  margin: 4px;
+   margin: 5px;
   font-size: 14px;
  
 }
 .plc-form-reason-section input{
-  color: rgb(33, 20, 228);
-  margin: 4px;
+   margin: 5px;
   font-size: 14px;
  
 }
