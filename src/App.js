@@ -13,7 +13,7 @@ import WeighFeeder from './pages/WeighFeeder';
 import PlcModificationForm from './pages/PlcModificationForm';
 import WeighFeederForm from './pages/WeighFeederForm';
  import './App.css';
-    
+import DashBoard from './pages/DashBoard';
 import AccessDenied from './components/AccessDenied'
 import PLCChangeRequest from './pages/PLCChangeRequest';
  
@@ -197,6 +197,14 @@ function App() {
           element={
             <ProtectedRoute>
               <PLCChangeRequest/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <DashBoard/>
             </ProtectedRoute>
           } 
         />
