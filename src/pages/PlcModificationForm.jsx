@@ -70,6 +70,8 @@ function PlcModificationForm() {
                 </header> */}
         <form onSubmit={handleSubmit} className="plc-form">
           <div className="plc-form-title">
+            <img src="/hcclogo2.png" alt="Company Logo" className="logo-plcform" />
+
             <h1>PLC MODIFICATION REQUEST FORM</h1>
           </div>
 
@@ -155,8 +157,6 @@ function PlcModificationForm() {
                 className="plc-form-input-reason"
               />
             </div>
-     
-    
           </div>
           <div className="plc-form-request-type">
             <label className="plc-form-label">Type of Request:</label>
